@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', async () => {
-  const loginForm = document.getElementById('login-form');
+  	const loginForm = document.getElementById('login-form');
 
 	if (loginForm) {
 		loginForm.addEventListener('submit', async (event) => {
@@ -178,7 +178,7 @@ async function loginUser(email, password) {
     document.cookie = `token=${data.access_token}; path=/`;
     window.location.href = redirectFromUrl() || 'index.html';
   } else {
-      alert('Login failed: ' + response.statusText);
+      alert('Unable to login ' + response.statusText);
   }
 }
 
@@ -192,6 +192,7 @@ function checkAuthentication() {
 		loginLink.style.display = 'none';
 	}
 }
+
 function getCookie(name) {
   let cookies = document.cookie;
   if(cookies) {
